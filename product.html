@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>hachim - our products</title>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<!-- Custom styles -->
+	<style>
+		nav {
+			margin-top: 20px;
+		}
+
+		body {
+			background-color: #fff;
+			color: #000;
+		}
+
+		header {
+			padding: 20px 0;
+			position: relative;
+			background: url('HeaderBanner.jpg') center/cover;
+			z-index: 1;
+			height: 100%;
+			width: 100%;
+		}
+
+		header::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			background: rgba(0, 0, 0, 0.5);
+			z-index: -1;
+		}
+
+		header .navbar-brand {
+			position: relative;
+			z-index: 1;
+			color: #fff;
+		}
+
+		header h1 {
+			font-size: 2.5rem;
+			position: relative;
+			z-index: 1;
+			color: #fff;
+		}
+
+		nav {
+			margin-top: 20px;
+		}
+
+		form {
+			margin-bottom: 20px;
+		}
+
+		button {
+			margin-right: 10px;
+		}
+
+		main {
+			background-color: #fff;
+			border-radius: 8px;
+			box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+			padding: 20px;
+		}
+
+		section {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-around;
+		}
+
+		article {
+			margin-bottom: 20px;
+			background-color: #fff;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			border-radius: 8px;
+			overflow: hidden;
+			transition: transform 0.3s ease-in-out;
+			max-width: 100%;
+			/* Ensure the articles don't exceed the container width */
+		}
+
+		article:hover {
+			transform: scale(1.05);
+		}
+
+		article img {
+			width: 100%;
+			height: auto;
+			display: block;
+		}
+
+		article p {
+			margin: 0;
+			padding: 10px;
+			background-color: #027bff;
+			color: white;
+			font-size: 18px;
+			border-radius: 0 0 8px 8px;
+			position: absolute;
+			bottom: 0;
+			right: 0;
+		}
+
+		footer {
+			background-color: #000;
+			color: #fff;
+			padding: 20px 0;
+		}
+
+		button {
+			margin-right: 10px;
+			transition: background-color 0.3s ease;
+		}
+
+		button:hover {
+			background-color: #000;
+		}
+
+		#filterForms {
+			background: #000;
+			padding: 20px;
+			border-radius: 8px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+
+		#filterForms label,
+		#filterForms output {
+			color: #fff;
+		}
+
+		.hoverable:hover {
+			transform: scale(1.2);
+			/* Adjust the scale factor as needed */
+		}
+	</style>
+
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+	<header class="bg-dark text-white text-center" style="height: auto">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-md-3">
+					<!-- Logo on the left side with hover animation -->
+					<a href="index.html" class="navbar-brand">
+						<img src="LogoUnternehmen.png" alt="hachim logo" height="75%" width="75%"
+							class="img-fluid logo-img hoverable" style="transition: transform 0.3s ease-in-out;">
+					</a>
+				</div>
+				<div class="col-md-6">
+					<!-- Navigation and Heading in the middle -->
+					<nav class="navbar navbar-expand-sm navbar-dark">
+						<button class="navbar-toggler mx-auto" type="button" data-toggle="collapse"
+							data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+							aria-label="Toggle navigation">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+						<div class="collapse navbar-collapse" id="navbarNav">
+							<ul class="navbar-nav mx-auto">
+								<!-- mx-auto centers the navigation links -->
+								<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+								<li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+								<li class="nav-item"><a class="nav-link" href="product.html">Products</a></li>
+								<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+							</ul>
+						</div>
+					</nav>
+					<h1 class="mb-4">Our products</h1>
+				</div>
+				<div class="col-md-3">
+					<!-- Filter button on the right side -->
+					<button id="showFilters" class="btn btn-primary" data-toggle="collapse"
+						data-target="#filterForms">Show Filters</button>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12 mb-3">
+					<div id="filterForms" class="collapse filters-container"
+						style="background-color: rgba(0, 0, 0, 0.6);">
+						<form id="ramRangeForm" class="my-3">
+							<label for="minRAM">Minimum RAM:</label>
+							<input type="range" id="minRAM" name="minRAM" min="0" max="16" value="0">
+							<output for="minRAM" id="minRAMValue">0GB</output>
+							<br>
+							<label for="maxRAM">Maximum RAM:</label>
+							<input type="range" id="maxRAM" name="maxRAM" min="0" max="16" value="16">
+							<output for="maxRAM" id="maxRAMValue">16GB</output>
+							<br>
+						</form>
+						<form id="storageRangeForm" class="my-3">
+							<label for="minStorage">Minimum Storage:</label>
+							<input type="range" id="minStorage" name="minStorage" min="0" max="1024" value="0">
+							<output for="minStorage" id="minStorageValue">0GB</output>
+							<br>
+							<label for="maxStorage">Maximum Storage:</label>
+							<input type="range" id="maxStorage" name="maxStorage" min="0" max="1024" value="1024">
+							<output for="maxStorage" id="maxStorageValue">1024GB</output>
+						</form>
+						<form id="priceRangeForm" class="my-3">
+							<label for="minPrice">Minimum Price:</label>
+							<input type="range" id="minPrice" name="minPrice" min="0" max="1500" value="0">
+							<output for="minPrice" id="minPriceValue">0€</output>
+							<br>
+							<label for="maxPrice">Maximum Price:</label>
+							<input type="range" id="maxPrice" name="maxPrice" min="0" max="1500" value="1500">
+							<output for="maxPrice" id="maxPriceValue">1500€</output>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12 d-flex justify-content-center">
+					<!-- "Apply Filter" button outside the collapsible container -->
+					<button id="applyFilter" class="btn btn-primary">Apply Filter</button>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<main class="container">
+		<section id="smartphonesSection">
+			<!-- Smartphone 1 -->
+			<article class="col-lg-3 col-md-4 col-sm-6 mb-4">
+				<h3 class="mb-3 border-bottom border-dark">Xiaomi 14 Pro</h3>
+				<div class="position-relative">
+					<a href="Produktdetails/Xiaomi14Pro.html" class="d-block">
+						<img src="Produktbilder/Xiaomi14Pro/Xiaomi14Pro.webp" alt="Xiaomi 14 Pro" class="img-fluid"
+							style="max-width: 500px">
+						<p class="position-absolute bottom-0 right-0 bg-primary text-white px-2 py-1 rounded">Price:
+							899€</p>
+					</a>
+				</div>
+			</article>
+
+			<!-- Smartphone 2 -->
+			<article class="col-lg-3 col-md-4 col-sm-6 mb-4">
+				<h3 class="mb-3 border-bottom border-dark">Xiaomi 14</h3>
+				<div class="position-relative">
+					<a href="Produktdetails/Xiaomi14.html" class="d-block">
+						<img src="Produktbilder/Xiaomi14/Xiaomi14.webp" alt="Xiaomi 14" class="img-fluid"
+							style="max-width: 500px">
+						<p class="position-absolute bottom-0 right-0 bg-primary text-white px-2 py-1 rounded">Price:
+							699€</p>
+					</a>
+				</div>
+			</article>
+
+			<!-- Smartphone 3 -->
+			<article class="col-lg-3 col-md-4 col-sm-6 mb-4">
+				<h3 class="mb-3 border-bottom border-dark">Xiaomi Redmi Note 13 Pro Plus</h3>
+				<div class="position-relative">
+					<a href="Produktdetails/RedmiNote13ProPlus.html" class="d-block">
+						<img src="Produktbilder/RedmiNote13ProPlus/RedmiNote13ProPlus.webp" alt="Redmi Note 13 Pro Plus"
+							class="img-fluid">
+						<p class="position-absolute bottom-0 right-0 bg-primary text-white px-2 py-1 rounded"
+							style="max-width: 500px">Price:
+							349€</p>
+					</a>
+				</div>
+			</article>
+
+			<!-- Smartphone 4 -->
+			<article class="col-lg-3 col-md-4 col-sm-6 mb-4">
+				<h3 class="mb-3 border-bottom border-dark">Xiaomi Redmi Note 13 Pro</h3>
+				<div class="position-relative">
+					<a href="Produktdetails/RedmiNote13Pro.html" class="d-block">
+						<img src="Produktbilder/RedmiNote13Pro/RedmiNote13Pro.webp" alt="Redmi Note 13 Pro"
+							class="img-fluid">
+						<p class="position-absolute bottom-0 right-0 bg-primary text-white px-2 py-1 rounded"
+							style="max-width: 500px">Price:
+							249€</p>
+					</a>
+				</div>
+			</article>
+		</section>
+	</main>
+
+	<footer class="bg-primary text-white text-center py-4">
+		<p class="mb-0">&copy; 2024 hachim - Hallein China Import</p>
+	</footer>
+
+	<script>
+		const smartphones = [
+			{
+				name: 'Xiaomi 14 Pro',
+				configurations: [
+					{ RAM: 12, storage: 256, price: 899 },
+					{ RAM: 16, storage: 512, price: 999 },
+					{ RAM: 16, storage: 1024, price: 1099 }
+				]
+			},
+			{
+				name: 'Xiaomi 14',
+				configurations: [
+					{ RAM: 8, storage: 256, price: 699 },
+					{ RAM: 12, storage: 256, price: 749 },
+					{ RAM: 16, storage: 512, price: 799 },
+					{ RAM: 16, storage: 1024, price: 899 }
+				]
+			},
+			{
+				name: 'Xiaomi Redmi Note 13 Pro Plus',
+				configurations: [
+					{ RAM: 12, storage: 256, price: 349 },
+					{ RAM: 12, storage: 512, price: 399 },
+					{ RAM: 16, storage: 512, price: 459 }
+				]
+			},
+			{
+				name: 'Xiaomi Redmi Note 13 Pro',
+				configurations: [
+					{ RAM: 8, storage: 128, price: 249 },
+					{ RAM: 8, storage: 256, price: 279 },
+					{ RAM: 12, storage: 256, price: 299 },
+					{ RAM: 12, storage: 512, price: 339 },
+					{ RAM: 16, storage: 512, price: 349 }
+				]
+			},
+		];
+
+		// Hide filters initially
+		document.getElementById('ramRangeForm').classList.add('d-none');
+		document.getElementById('storageRangeForm').classList.add('d-none');
+		document.getElementById('priceRangeForm').classList.add('d-none');
+		document.getElementById('applyFilter').classList.add('d-none');
+
+		// Show filters when the "Show Filters" button is clicked
+		document.getElementById('showFilters').addEventListener('click', function () {
+			document.getElementById('ramRangeForm').classList.remove('d-none');
+			document.getElementById('storageRangeForm').classList.remove('d-none');
+			document.getElementById('priceRangeForm').classList.remove('d-none');
+			document.getElementById('applyFilter').classList.remove('d-none');
+			this.classList.add('d-none'); // Hide the "Show Filters" button
+		});
+
+		function filterByRAMAndStorageAndPriceRange() {
+			const minRAMValue = parseInt(document.getElementById('minRAM').value);
+			const maxRAMValue = parseInt(document.getElementById('maxRAM').value);
+			const minStorageValue = parseInt(document.getElementById('minStorage').value);
+			const maxStorageValue = parseInt(document.getElementById('maxStorage').value);
+			const minPriceValue = parseInt(document.getElementById('minPrice').value);
+			const maxPriceValue = parseInt(document.getElementById('maxPrice').value);
+
+			const filteredSmartphones = smartphones.filter((smartphone) =>
+				smartphone.configurations.some(
+					(config) =>
+						config.RAM >= minRAMValue &&
+						config.RAM <= maxRAMValue &&
+						config.storage >= minStorageValue &&
+						config.storage <= maxStorageValue &&
+						config.price >= minPriceValue &&
+						config.price <= maxPriceValue
+				)
+			);
+
+			displayFilteredSmartphones(filteredSmartphones);
+		}
+
+
+		document.getElementById('applyFilter').addEventListener('click', filterByRAMAndStorageAndPriceRange);
+
+		function addClickHandlers() {
+			const smartphonesSection = document.querySelector('#smartphonesSection');
+			smartphonesSection.addEventListener('click', (event) => {
+				const clickedElement = event.target;
+				if (clickedElement.tagName === 'IMG') {
+					const anchor = clickedElement.parentElement;
+					if (anchor && anchor.tagName === 'A') {
+						const link = anchor.getAttribute('href');
+						window.location.href = link;
+					}
+				}
+			});
+		}
+
+		function displayFilteredSmartphones(filteredSmartphones) {
+			const smartphonesSection = document.querySelector('#smartphonesSection');
+
+			smartphonesSection.innerHTML = '';
+
+			filteredSmartphones.forEach((smartphone) => {
+				const matchingConfigurations = smartphone.configurations.filter(
+					(config) =>
+						config.RAM >= parseInt(document.getElementById('minRAM').value) &&
+						config.RAM <= parseInt(document.getElementById('maxRAM').value) &&
+						config.storage >= parseInt(document.getElementById('minStorage').value) &&
+						config.storage <= parseInt(document.getElementById('maxStorage').value) &&
+						config.price >= parseInt(document.getElementById('minPrice').value) &&
+						config.price <= parseInt(document.getElementById('maxPrice').value)
+				);
+
+				if (matchingConfigurations.length > 0) {
+					// Use the first matching configuration as an example, you can modify this based on your requirements
+					const firstMatchingConfig = matchingConfigurations[0];
+
+					const articleElement = document.createElement('article');
+					articleElement.innerHTML = `
+                <h3>${smartphone.name}</h3>
+                <div style="position: relative; display: inline-block;">
+                    <a href="Produktdetails/${smartphone.name.replace(/\s/g, '')}.html" style="position: relative; display: inline-block;">
+                        <img src="Produktbilder/${smartphone.name.replace(/\s/g, '')}/${smartphone.name.replace(/\s/g, '')}.webp" alt="${smartphone.name}" style="max-width: 400px; max-height: 400px;">
+                        <p style="position: absolute; bottom: 5px; right: 5px; background-color: #027bff; color: white; padding: 5px; font-size: 18px; border-radius: 5px;">Price: ${firstMatchingConfig.price}€</p>
+                    </a>
+                </div>
+            `;
+					smartphonesSection.appendChild(articleElement);
+				}
+			});
+		}
+
+		function updateSelectedRAMValues() {
+			const minRAM = document.getElementById('minRAM');
+			const maxRAM = document.getElementById('maxRAM');
+			const minRAMValue = document.getElementById('minRAMValue');
+			const maxRAMValue = document.getElementById('maxRAMValue');
+
+			minRAMValue.textContent = `${minRAM.value}GB`;
+			maxRAMValue.textContent = `${maxRAM.value}GB`;
+		}
+
+		function updateSelectedStorageValues() {
+			const minStorage = document.getElementById('minStorage');
+			const maxStorage = document.getElementById('maxStorage');
+			const minStorageValue = document.getElementById('minStorageValue');
+			const maxStorageValue = document.getElementById('maxStorageValue');
+
+			minStorageValue.textContent = `${minStorage.value}GB`;
+			maxStorageValue.textContent = `${maxStorage.value}GB`;
+		}
+
+		function updateSelectedPriceValues() {
+			const minPrice = document.getElementById('minPrice');
+			const maxPrice = document.getElementById('maxPrice');
+			const minPriceValue = document.getElementById('minPriceValue');
+			const maxPriceValue = document.getElementById('maxPriceValue');
+
+			minPriceValue.textContent = `${minPrice.value}€`;
+			maxPriceValue.textContent = `${maxPrice.value}€`;
+		}
+
+		// Attach event listeners to update selected values on input change
+		document.getElementById('minRAM').addEventListener('input', updateSelectedRAMValues);
+		document.getElementById('maxRAM').addEventListener('input', updateSelectedRAMValues);
+		document.getElementById('minStorage').addEventListener('input', updateSelectedStorageValues);
+		document.getElementById('maxStorage').addEventListener('input', updateSelectedStorageValues);
+		document.getElementById('minPrice').addEventListener('input', updateSelectedPriceValues);
+		document.getElementById('maxPrice').addEventListener('input', updateSelectedPriceValues);
+		document.getElementById('applyFilter').addEventListener('click', filterByRAMAndStorageAndPriceRange);
+
+		addClickHandlers();
+
+		displayFilteredSmartphones(smartphones);
+	</script>
+</body>
+
+</html>
