@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>hachim - Xiaomi 14</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Custom styles -->
+  <style>
+    nav {
+      margin-top: 20px;
+    }
+
+    body {
+      background-color: #fff;
+      color: #000;
+      margin: 0;
+      /* Remove default margin */
+      min-height: 100vh;
+      /* Set minimum height to full viewport height */
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      padding: 20px 0;
+      position: relative;
+      background: url('HeaderBanner.jpg') center/cover;
+      z-index: 1;
+      height: 100%;
+      width: 100%;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: -1;
+    }
+
+    header .navbar-brand {
+      position: relative;
+      z-index: 1;
+      color: #fff;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      position: relative;
+      z-index: 1;
+      color: #fff;
+    }
+
+    nav {
+      margin-top: 20px;
+    }
+
+    form {
+      margin-bottom: 20px;
+    }
+
+    main {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      padding-top: 20px;
+      flex: 1;
+      /* Take remaining vertical space */
+    }
+
+    section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+
+    section h2 {
+      margin-bottom: 20px;
+    }
+
+    section p {
+      line-height: 1.5;
+      /* You can adjust the value as needed */
+    }
+
+    footer {
+      background-color: #000;
+      color: #fff;
+      padding: 20px 0;
+    }
+
+    .hoverable:hover {
+      transform: scale(1.2);
+      /* Adjust the scale factor as needed */
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <header class="bg-dark text-white text-center" style="height: auto">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-3">
+          <!-- Logo on the left side with hover animation -->
+          <a href="..\index.html" class="navbar-brand">
+            <img src="..\LogoUnternehmen.png" alt="hachim logo" height="75%" width="75%"
+              class="img-fluid logo-img hoverable" style="transition: transform 0.3s ease-in-out;">
+          </a>
+        </div>
+        <div class="col-md-6">
+          <!-- Navigation and Heading in the middle -->
+          <nav class="navbar navbar-expand-sm navbar-dark">
+            <button class="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav mx-auto">
+                <!-- mx-auto centers the navigation links -->
+                <li class="nav-item"><a class="nav-link" href="..\index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="..\about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="..\product.html">Products</a></li>
+                <li class="nav-item"><a class="nav-link" href="..\contact.html">Contact</a></li>
+              </ul>
+            </div>
+          </nav>
+          <h1 class="mb-4">Xiaomi 14</h1>
+        </div>
+      </div>
+  </header>
+
+  <main class="container">
+    <section class="mb-4">
+      <h2>Specifications for Xiaomi 14</h2>
+      <div>
+        <select id="colorDropdown">
+          <option value="" selected hidden>Select Color</option>
+          <option value="Black">Black</option>
+          <option value="White">White</option>
+          <option value="Green">Green</option>
+          <option value="Pink">Pink</option>
+        </select>
+      </div>
+      <img id="phoneImageBlack" src="..\Produktbilder\Xiaomi14\Xiaomi14_Black.webp" alt="Xiaomi 14 - Black"
+        style="display: none;">
+      <img id="phoneImageWhite" src="..\Produktbilder\Xiaomi14\Xiaomi14_White.webp" alt="Xiaomi 14 - White"
+        style="display: none;">
+      <img id="phoneImageGreen" src="..\Produktbilder\Xiaomi14\Xiaomi14_Green.webp" alt="Xiaomi 14 - Green"
+        style="display: none;">
+      <img id="phoneImagePink" src="..\Produktbilder\Xiaomi14\Xiaomi14_Pink.webp" alt="Xiaomi 14 - Pink"
+        style="display: none;">
+      <p>
+        MANUFACTURER: Xiaomi
+        <br>
+        MODEL: Xiaomi 14
+        <br>
+        COLOR: Black, White
+        <br>
+        OPERATING SYSTEM: Xiaomi Hyper OS base on Android.
+        <br>
+        NETWORK: GSM, CDMA1X, WCDMA, TD-SCDMA, CDMA EVDO, TD-LTE, LTE-FDD
+        <br>
+        BAND: 5G: n1/n3/n5/n8/n28a/n38/n40/n41/n48/n66/n77/n78.
+        <br>
+        CARRIER: Unlocked
+        <br>
+        LANGUAGE: English and Chinese
+        <br>
+        SCREEN: 6.36-inch 1.5K AMOLED Display
+        <br>
+        PROCESSOR: CPU: 4nm Qualcomm Snapdragon 8 Gen 3 processor, GPU: Adreno 750
+        <br>
+        RAM: 12GB/16GB LPDDR5X RAM
+        <br>
+        ROM: 256GB/512GB/1TB, UFS 4.0 Storage
+        <br>
+        REAR CAMERA: 50MP+50MP+50MP
+        <br>
+        FRONT CAMERA: 32MP, 26mm (wide), 0.7µm
+        <br>
+        BATTERY: 4610mAh battery, super-fast 120W wired charging and 50W wireless charging
+        <br>
+        SIM CARD: Dual Nano SIM slots
+        <br>
+        DIMENSION: 152.8 x 71.5 x 8.2 mm or 8.28 mm
+        <br>
+        WEIGHT: 193 g or 188 g
+        <br>
+        IN THE BOX: Phone, USB Type-C Cable, Charger, Manual, SIM Needle
+      </p>
+    </section>
+  </main>
+
+  <footer class="bg-primary text-white text-center py-4">
+    <p class="mb-0">&copy; 2024 hachim - Hallein China Import</p>
+  </footer>
+
+  <script>
+    const colorDropdown = document.getElementById('colorDropdown');
+    const phoneImages = {
+      Black: document.getElementById('phoneImageBlack'),
+      White: document.getElementById('phoneImageWhite'),
+      Green: document.getElementById('phoneImageGreen'),
+      Pink: document.getElementById('phoneImagePink')
+    };
+
+    colorDropdown.addEventListener('change', function () {
+      const selectedColor = colorDropdown.value;
+      if (selectedColor === '') {
+        // Hide all images if the default option is selected
+        Object.keys(phoneImages).forEach(color => {
+          phoneImages[color].style.display = 'none';
+        });
+      } else {
+        // Show only the selected image
+        Object.keys(phoneImages).forEach(color => {
+          phoneImages[color].style.display = color === selectedColor ? 'block' : 'none';
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>

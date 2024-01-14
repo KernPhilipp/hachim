@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>hachim - Xiaomi Redmi Note 13 Pro</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Custom styles -->
+  <style>
+    nav {
+      margin-top: 20px;
+    }
+
+    body {
+      background-color: #fff;
+      color: #000;
+      margin: 0;
+      /* Remove default margin */
+      min-height: 100vh;
+      /* Set minimum height to full viewport height */
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      padding: 20px 0;
+      position: relative;
+      background: url('HeaderBanner.jpg') center/cover;
+      z-index: 1;
+      height: 100%;
+      width: 100%;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: -1;
+    }
+
+    header .navbar-brand {
+      position: relative;
+      z-index: 1;
+      color: #fff;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      position: relative;
+      z-index: 1;
+      color: #fff;
+    }
+
+    nav {
+      margin-top: 20px;
+    }
+
+    form {
+      margin-bottom: 20px;
+    }
+
+    main {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      padding-top: 20px;
+      flex: 1;
+      /* Take remaining vertical space */
+    }
+
+    section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+
+    section h2 {
+      margin-bottom: 20px;
+    }
+
+    section p {
+      line-height: 1.5;
+      /* You can adjust the value as needed */
+    }
+
+    footer {
+      background-color: #000;
+      color: #fff;
+      padding: 20px 0;
+    }
+
+    .hoverable:hover {
+      transform: scale(1.2);
+      /* Adjust the scale factor as needed */
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <header class="bg-dark text-white text-center" style="height: auto">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-3">
+          <!-- Logo on the left side with hover animation -->
+          <a href="..\index.html" class="navbar-brand">
+            <img src="..\LogoUnternehmen.png" alt="hachim logo" height="75%" width="75%"
+              class="img-fluid logo-img hoverable" style="transition: transform 0.3s ease-in-out;">
+          </a>
+        </div>
+        <div class="col-md-6">
+          <!-- Navigation and Heading in the middle -->
+          <nav class="navbar navbar-expand-sm navbar-dark">
+            <button class="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav mx-auto">
+                <!-- mx-auto centers the navigation links -->
+                <li class="nav-item"><a class="nav-link" href="..\index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="..\about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="..\product.html">Products</a></li>
+                <li class="nav-item"><a class="nav-link" href="..\contact.html">Contact</a></li>
+              </ul>
+            </div>
+          </nav>
+          <h1 class="mb-4">Xiaomi Redmi Note 13 Pro</h1>
+        </div>
+      </div>
+  </header>
+
+  <main class="container">
+    <section class="mb-4">
+      <h2>Specifications for Xiaomi Redmi Note 13 Pro</h2>
+      <div>
+        <select id="colorDropdown">
+          <option value="" selected hidden>Select Color</option>
+          <option value="Black">Black</option>
+          <option value="White">White</option>
+          <option value="Purple">Purple</option>
+          <option value="Blue">Blue</option>
+        </select>
+      </div>
+      <img id="phoneImageBlack" src="..\Produktbilder\XiaomiRedmiNote13Pro\XiaomiRedmiNote13Pro_Black.webp"
+        alt="Xiaomi Redmi Note 13 Pro - Black" style="display: none;">
+      <img id="phoneImageWhite" src="..\Produktbilder\XiaomiRedmiNote13Pro\XiaomiRedmiNote13Pro_White.webp"
+        alt="Xiaomi Redmi Note 13 Pro - White" style="display: none;">
+      <img id="phoneImagePurple" src="..\Produktbilder\XiaomiRedmiNote13Pro\XiaomiRedmiNote13Pro_Purple.webp"
+        alt="Xiaomi Redmi Note 13 Pro - Purple" style="display: none;">
+      <img id="phoneImageBlue" src="..\Produktbilder\XiaomiRedmiNote13Pro\XiaomiRedmiNote13Pro_Blue.webp"
+        alt="Xiaomi Redmi Note 13 Pro - Blue" style="display: none;">
+      <p>
+        MANUFACTURER: Xiaomi
+        <br>
+        MODEL: Redmi Note 13 Pro
+        <br>
+        OPERATING SYSTEM: MIUI 14 based on Android 13 OS
+        <br>
+        NETWORK: Support Network 2G,3G,4G, 5G, GSM + WCDMA + TD-SCDMA + LTE-FDD + TD-LTE, Dual WiFi 2.4GHz/5.0GHz; WiFi
+        version Support Network 2.4GHz / 5.0GHz WiFi
+        <br>
+        BAND: 5G: n1/n3/n5/n8/n28A (Tx: 703-733MHz, Rx: 758-788MHz)/n38/n41/n77/n78; 4G: FDD-LTE:
+        B1/B3/B5/B8/B19;TDD-LTE: B34/B38/B39/B40/B41/B42;3G: WCDMA: B1/B5/B6/B8/B19; 2G: GSM: B3/B5/B8 ; CDMA 1X: BC0
+        <br>
+        CARRIER: Unlocked
+        <br>
+        LANGUAGE: English, Simplified Chinese...
+        <br>
+        SCREEN: 6.67-inch OLED 120 Hz refresh rate FHD+ display, 20:9 ratio
+        <br>
+        PROCESSOR CPU: Qualcomm Snapdragon 7s Gen 2 Octa-Core processor
+        <br>
+        RAM: 8GB/12GB/16GB LPDDR5
+        <br>
+        ROM: 256GB/512GB UFS3.1
+        <br>
+        REAR CAMERA: 200MP rear triple-cameras
+        <br>
+        FRONT CAMERA: 16MP
+        <br>
+        BATTERY: 5100mAh battery with 67W fast charging
+        <br>
+        SIM CARD: Dual SIM card slots, Dual Nano-SIM
+        <br>
+        DIMENSION: 161.1 x 75 x 7.9 mm
+        <br>
+        WEIGHT: 181g
+        <br>
+        IN THE BOX: Phone, USB Cable, Charger, Manual, SIM Needle
+      </p>
+    </section>
+  </main>
+
+  <footer class="bg-primary text-white text-center py-4">
+    <p class="mb-0">&copy; 2024 hachim - Hallein China Import</p>
+  </footer>
+
+  <script>
+    const colorDropdown = document.getElementById('colorDropdown');
+    const phoneImages = {
+      Black: document.getElementById('phoneImageBlack'),
+      White: document.getElementById('phoneImageWhite'),
+      Purple: document.getElementById('phoneImagePurple'),
+      Blue: document.getElementById('phoneImageBlue'),
+    };
+
+    colorDropdown.addEventListener('change', function () {
+      const selectedColor = colorDropdown.value;
+      if (selectedColor === '') {
+        // Hide all images if the default option is selected
+        Object.keys(phoneImages).forEach(color => {
+          phoneImages[color].style.display = 'none';
+        });
+      } else {
+        // Show only the selected image
+        Object.keys(phoneImages).forEach(color => {
+          phoneImages[color].style.display = color === selectedColor ? 'block' : 'none';
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>
