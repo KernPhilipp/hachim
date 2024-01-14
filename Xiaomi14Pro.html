@@ -17,12 +17,6 @@
     body {
       background-color: #fff;
       color: #000;
-      margin: 0;
-      /* Remove default margin */
-      min-height: 100vh;
-      /* Set minimum height to full viewport height */
-      display: flex;
-      flex-direction: column;
     }
 
     header {
@@ -66,13 +60,15 @@
       margin-bottom: 20px;
     }
 
+    button {
+      margin-right: 10px;
+    }
+
     main {
       background-color: #fff;
       border-radius: 8px;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-      padding-top: 20px;
-      flex: 1;
-      /* Take remaining vertical space */
+      padding: 20px;
     }
 
     section {
@@ -81,19 +77,64 @@
       justify-content: space-around;
     }
 
-    section h2 {
+    article {
       margin-bottom: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.3s ease-in-out;
+      max-width: 100%;
+      /* Ensure the articles don't exceed the container width */
     }
 
-    section p {
-      line-height: 1.5;
-      /* You can adjust the value as needed */
+    article:hover {
+      transform: scale(1.05);
+    }
+
+    article img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    article p {
+      margin: 0;
+      padding: 10px;
+      background-color: #027bff;
+      color: white;
+      font-size: 18px;
+      border-radius: 0 0 8px 8px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
     }
 
     footer {
       background-color: #000;
       color: #fff;
       padding: 20px 0;
+    }
+
+    button {
+      margin-right: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #000;
+    }
+
+    #filterForms {
+      background: #000;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #filterForms label,
+    #filterForms output {
+      color: #fff;
     }
 
     .hoverable:hover {
@@ -151,14 +192,11 @@
           <option value="Titanium">Titanium</option>
         </select>
       </div>
-      <img id="phoneImageBlack" src="Xiaomi14Pro_Black.webp" alt="Xiaomi 14 Pro - Black"
+      <img id="phoneImageBlack" src="Xiaomi14Pro_Black.webp" alt="Xiaomi 14 Pro - Black" style="display: none;">
+      <img id="phoneImageWhite" src="Xiaomi14Pro_White.webp" alt="Xiaomi 14 Pro - White" style="display: none;">
+      <img id="phoneImageGreen" src="Xiaomi14Pro_Green.webp" alt="Xiaomi 14 Pro - Green" style="display: none;">
+      <img id="phoneImageTitanium" src="Xiaomi14Pro_Titanium.webp" alt="Xiaomi 14 Pro - Titanium"
         style="display: none;">
-      <img id="phoneImageWhite" src="Xiaomi14Pro_White.webp" alt="Xiaomi 14 Pro - White"
-        style="display: none;">
-      <img id="phoneImageGreen" src="Xiaomi14Pro_Green.webp" alt="Xiaomi 14 Pro - Green"
-        style="display: none;">
-      <img id="phoneImageTitanium" src="Xiaomi14Pro_Titanium.webp"
-        alt="Xiaomi 14 Pro - Titanium" style="display: none;">
       <p>
         MANUFACTURER: Xiaomi
         <br>
