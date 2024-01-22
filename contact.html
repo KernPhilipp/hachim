@@ -15,6 +15,9 @@
     }
 
     body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
       background-color: #fff;
       color: #000;
     }
@@ -65,16 +68,16 @@
     }
 
     main {
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-      padding: 20px;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      /* Added to align items vertically */
     }
 
     section {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
+      text-align: center;
     }
 
     article {
@@ -147,7 +150,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 
-<body>
+<body class="d-flex flex-column">
   <header class="bg-dark text-white text-center" style="height: auto">
     <div class="container">
       <div class="row align-items-center">
@@ -175,13 +178,13 @@
               </ul>
             </div>
           </nav>
-          <h1 class="mb-4">Welcome to hachim</h1>
+          <h1 class="mb-4">Contact</h1>
         </div>
       </div>
     </div>
   </header>
 
-  <main class="container">
+  <main class="container d-flex flex-column align-items-center flex-grow-1">
     <section class="mb-4">
       <h2>Contact</h2>
       <p>Email:</p>

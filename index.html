@@ -75,6 +75,7 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-around;
+      text-align: center;
     }
 
     article {
@@ -147,7 +148,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
   <header class="bg-dark text-white text-center" style="height: auto">
     <div class="container">
       <div class="row align-items-center">
@@ -181,8 +182,8 @@
     </div>
   </header>
 
-  <main class="container">
-    <section class="mb-4">
+  <main class="container flex-grow-1">
+    <section class="mb-4 d-flex flex-column">
       <h2>About hachim</h2>
       <p>Welcome to hachim! We specialize in importing smartphones from China to Europe.
         Check out our <a href="about.html">about page</a> to learn more!
