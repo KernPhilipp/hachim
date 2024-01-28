@@ -5,27 +5,28 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>hachim - Xiaomi Redmi Note 13 Pro Plus</title>
+  <title>hachim - Xiaomi 14</title>
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <!-- Custom styles -->
   <style>
-    nav {
-      margin-top: 20px;
-    }
-
     body {
       background-color: #fff;
       color: #000;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      /* Set the minimum height of the body to fill the viewport */
     }
 
     header {
-      padding: 20px 0;
       position: relative;
       background: url('HeaderBanner.jpg') center/cover;
+      height: auto;
+      text-align: center;
+      padding: 20px 0;
       z-index: 1;
-      height: 100%;
-      width: 100%;
     }
 
     header::before {
@@ -52,16 +53,18 @@
       color: #fff;
     }
 
-    nav {
-      margin-top: 20px;
-    }
-
-    form {
+    form,
+    button {
       margin-bottom: 20px;
     }
 
     button {
       margin-right: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #000;
     }
 
     main {
@@ -69,6 +72,33 @@
       border-radius: 8px;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
       padding: 20px;
+      overflow: hidden;
+      flex: 1;
+      /* Allow main content to grow and fill the remaining space */
+    }
+
+    footer {
+      background-color: #000;
+      color: #fff;
+      padding: 20px 0;
+      margin-top: auto;
+      /* Push the footer to the bottom of the flex container */
+    }
+
+    article p {
+      margin: 0;
+      padding: 10px;
+      background-color: #027bff;
+      color: white;
+      font-size: 16px;
+      border-radius: 0 0 8px 8px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      max-width: 100%;
+      /* Set a maximum width */
+      overflow-wrap: break-word;
+      /* Allow word break */
     }
 
     section {
@@ -85,7 +115,6 @@
       overflow: hidden;
       transition: transform 0.3s ease-in-out;
       max-width: 100%;
-      /* Ensure the articles don't exceed the container width */
     }
 
     article:hover {
@@ -96,33 +125,7 @@
       width: 100%;
       height: auto;
       display: block;
-    }
-
-    article p {
-      margin: 0;
-      padding: 10px;
-      background-color: #027bff;
-      color: white;
-      font-size: 18px;
-      border-radius: 0 0 8px 8px;
-      position: absolute;
-      bottom: 0;
-      right: 0;
-    }
-
-    footer {
-      background-color: #000;
-      color: #fff;
-      padding: 20px 0;
-    }
-
-    button {
-      margin-right: 10px;
-      transition: background-color 0.3s ease;
-    }
-
-    button:hover {
-      background-color: #000;
+      border-radius: 8px 8px 0 0;
     }
 
     #filterForms {
@@ -139,27 +142,28 @@
 
     .hoverable:hover {
       transform: scale(1.2);
-      /* Adjust the scale factor as needed */
+    }
+
+    nav {
+      margin-top: 20px;
     }
   </style>
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@2.10.2/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-  <header class="bg-dark text-white text-center" style="height: auto">
+  <header class="bg-dark text-white text-center">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-3">
-          <!-- Logo on the left side with hover animation -->
           <a href="index.html" class="navbar-brand">
             <img src="LogoUnternehmen.png" alt="hachim logo" height="75%" width="75%"
               class="img-fluid logo-img hoverable" style="transition: transform 0.3s ease-in-out;">
           </a>
         </div>
         <div class="col-md-6">
-          <!-- Navigation and Heading in the middle -->
           <nav class="navbar navbar-expand-sm navbar-dark">
             <button class="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#navbarNav"
               aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -167,7 +171,6 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav mx-auto">
-                <!-- mx-auto centers the navigation links -->
                 <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="product.html">Products</a></li>
@@ -182,61 +185,77 @@
   </header>
 
   <main class="container">
-    <section class="mb-4">
-      <h2>Specifications for Xiaomi Redmi Note 13 Pro Plus</h2>
-      <div>
-        <select id="colorDropdown">
-          <option value="" selected hidden>Select Color</option>
-          <option value="Black">Black</option>
-          <option value="White">White</option>
-          <option value="Purple">Purple</option>
-        </select>
+    <section class="mb-4 row justify-content-center">
+      <div class="col-lg-8">
+        <h2 class="mb-4">Specifications for Xiaomi Redmi Note 13 Pro Plus</h2>
+        <div class="mb-4">
+          <select id="colorDropdown" class="form-control mb-4">
+            <option value="" selected hidden>Select Color</option>
+            <option value="Black">Black</option>
+            <option value="White">White</option>
+            <option value="Purple">Purple</option>
+          </select>
+        </div>
+        <div class="mb-4">
+          <div class="row">
+            <div class="col">
+              <img id="phoneImageBlack" src="XiaomiRedmiNote13ProPlus_Black.webp"
+                alt="Xiaomi Redmi Note 13 Pro Plus - Black" class="img-fluid">
+            </div>
+            <div class="col">
+              <img id="phoneImageWhite" src="XiaomiRedmiNote13ProPlus_White.webp"
+                alt="Xiaomi Redmi Note 13 Pro Plus - White" class="img-fluid">
+            </div>
+            <div class="col">
+              <img id="phoneImagePurple" src="XiaomiRedmiNote13ProPlus_Purple.webp"
+                alt="Xiaomi Redmi Note 13 Pro Plus - Purple" class="img-fluid">
+            </div>
+          </div>
+        </div>
+        <div class="mb-4 text-justify p-3 text-left">
+          <p>
+            MANUFACTURER: Xiaomi
+            <br>
+            MODEL: Redmi Note 13 Pro+
+            <br>
+            OPERATING SYSTEM: MIUI 14 based on Android 13 OS
+            <br>
+            NETWORK: Support Network 2G,3G,4G, 5G, GSM + WCDMA + TD-SCDMA + LTE-FDD + TD-LTE, Dual WiFi 2.4GHz/5.0GHz;
+            WiFi
+            version Support Network 2.4GHz / 5.0GHz WiFi
+            <br>
+            BAND: 5G: n1/n3/n5/n8/n28A (Tx: 703-733MHz, Rx: 758-788MHz)/n38/n41/n77/n78; 4G: FDD-LTE:
+            B1/B3/B5/B8/B19;TDD-LTE: B34/B38/B39/B40/B41/B42;3G: WCDMA: B1/B5/B6/B8/B19; 2G: GSM: B3/B5/B8 ; CDMA 1X:
+            BC0
+            <br>
+            CARRIER: Unlocked
+            <br>
+            LANGUAGE: English, Simplified Chinese...
+            <br>
+            SCREEN: 6.67-inch 1.5K OLED 120 Hz refresh rate FHD+ display, 20:9 ratio
+            <br>
+            PROCESSOR: CPU: MediaTek Dimensity 7200 Ultra Octa-Core processor
+            <br>
+            RAM: 12GB/16GB LPDDR5
+            <br>
+            ROM: 256GB/512GB UFS3.1
+            <br>
+            REAR CAMERA: 200MP+8MP+2MP
+            <br>
+            FRONT CAMERA: 16MP
+            <br>
+            BATTERY: 5000mAh battery with 120W fast charging
+            <br>
+            SIM CARD: Dual SIM card slots, Dual Nano-SIM
+            <br>
+            DIMENSION: 161.4 x74.2 x 8.9 mm
+            <br>
+            WEIGHT: 204.5g
+            <br>
+            IN THE BOX: Phone, USB Cable, Charger, Manual, SIM Needle
+          </p>
+        </div>
       </div>
-      <img id="phoneImageBlack" src="XiaomiRedmiNote13ProPlus_Black.webp" alt="Xiaomi Redmi Note 13 Pro Plus - Black"
-        style="display: none;">
-      <img id="phoneImageWhite" src="XiaomiRedmiNote13ProPlus_White.webp" alt="Xiaomi Redmi Note 13 Pro Plus - White"
-        style="display: none;">
-      <img id="phoneImagePurple" src="XiaomiRedmiNote13ProPlus_Purple.webp" alt="Xiaomi Redmi Note 13 Pro Plus - Purple"
-        style="display: none;">
-      <p>
-        MANUFACTURER: Xiaomi
-        <br>
-        MODEL: Redmi Note 13 Pro+
-        <br>
-        OPERATING SYSTEM: MIUI 14 based on Android 13 OS
-        <br>
-        NETWORK: Support Network 2G,3G,4G, 5G, GSM + WCDMA + TD-SCDMA + LTE-FDD + TD-LTE, Dual WiFi 2.4GHz/5.0GHz; WiFi
-        version Support Network 2.4GHz / 5.0GHz WiFi
-        <br>
-        BAND: 5G: n1/n3/n5/n8/n28A (Tx: 703-733MHz, Rx: 758-788MHz)/n38/n41/n77/n78; 4G: FDD-LTE:
-        B1/B3/B5/B8/B19;TDD-LTE: B34/B38/B39/B40/B41/B42;3G: WCDMA: B1/B5/B6/B8/B19; 2G: GSM: B3/B5/B8 ; CDMA 1X: BC0
-        <br>
-        CARRIER: Unlocked
-        <br>
-        LANGUAGE: English, Simplified Chinese...
-        <br>
-        SCREEN: 6.67-inch 1.5K OLED 120 Hz refresh rate FHD+ display, 20:9 ratio
-        <br>
-        PROCESSOR: CPU: MediaTek Dimensity 7200 Ultra Octa-Core processor
-        <br>
-        RAM: 12GB/16GB LPDDR5
-        <br>
-        ROM: 256GB/512GB UFS3.1
-        <br>
-        REAR CAMERA: 200MP+8MP+2MP
-        <br>
-        FRONT CAMERA: 16MP
-        <br>
-        BATTERY: 5000mAh battery with 120W fast charging
-        <br>
-        SIM CARD: Dual SIM card slots, Dual Nano-SIM
-        <br>
-        DIMENSION: 161.4 x74.2 x 8.9 mm
-        <br>
-        WEIGHT: 204.5g
-        <br>
-        IN THE BOX: Phone, USB Cable, Charger, Manual, SIM Needle
-      </p>
     </section>
   </main>
 
@@ -252,18 +271,22 @@
       Purple: document.getElementById('phoneImagePurple'),
     };
 
+    // Hide all image columns initially
+    Object.values(phoneImages).forEach(image => {
+      image.closest('.col').style.display = 'none';
+    });
+
     colorDropdown.addEventListener('change', function () {
       const selectedColor = colorDropdown.value;
-      if (selectedColor === '') {
-        // Hide all images if the default option is selected
-        Object.keys(phoneImages).forEach(color => {
-          phoneImages[color].style.display = 'none';
-        });
-      } else {
-        // Show only the selected image
-        Object.keys(phoneImages).forEach(color => {
-          phoneImages[color].style.display = color === selectedColor ? 'block' : 'none';
-        });
+
+      // Hide all image columns
+      Object.values(phoneImages).forEach(image => {
+        image.closest('.col').style.display = 'none';
+      });
+
+      if (selectedColor !== '') {
+        // Show only the column of the selected color image
+        phoneImages[selectedColor].closest('.col').style.display = 'block';
       }
     });
   </script>

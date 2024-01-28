@@ -10,22 +10,23 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <!-- Custom styles -->
   <style>
-    nav {
-      margin-top: 20px;
-    }
-
     body {
       background-color: #fff;
       color: #000;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      /* Set the minimum height of the body to fill the viewport */
     }
 
     header {
-      padding: 20px 0;
       position: relative;
       background: url('HeaderBanner.jpg') center/cover;
+      height: auto;
+      text-align: center;
+      padding: 20px 0;
       z-index: 1;
-      height: 100%;
-      width: 100%;
     }
 
     header::before {
@@ -52,16 +53,18 @@
       color: #fff;
     }
 
-    nav {
-      margin-top: 20px;
-    }
-
-    form {
+    form,
+    button {
       margin-bottom: 20px;
     }
 
     button {
       margin-right: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #000;
     }
 
     main {
@@ -69,6 +72,33 @@
       border-radius: 8px;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
       padding: 20px;
+      overflow: hidden;
+      flex: 1;
+      /* Allow main content to grow and fill the remaining space */
+    }
+
+    footer {
+      background-color: #000;
+      color: #fff;
+      padding: 20px 0;
+      margin-top: auto;
+      /* Push the footer to the bottom of the flex container */
+    }
+
+    article p {
+      margin: 0;
+      padding: 10px;
+      background-color: #027bff;
+      color: white;
+      font-size: 16px;
+      border-radius: 0 0 8px 8px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      max-width: 100%;
+      /* Set a maximum width */
+      overflow-wrap: break-word;
+      /* Allow word break */
     }
 
     section {
@@ -85,7 +115,6 @@
       overflow: hidden;
       transition: transform 0.3s ease-in-out;
       max-width: 100%;
-      /* Ensure the articles don't exceed the container width */
     }
 
     article:hover {
@@ -96,33 +125,7 @@
       width: 100%;
       height: auto;
       display: block;
-    }
-
-    article p {
-      margin: 0;
-      padding: 10px;
-      background-color: #027bff;
-      color: white;
-      font-size: 18px;
-      border-radius: 0 0 8px 8px;
-      position: absolute;
-      bottom: 0;
-      right: 0;
-    }
-
-    footer {
-      background-color: #000;
-      color: #fff;
-      padding: 20px 0;
-    }
-
-    button {
-      margin-right: 10px;
-      transition: background-color 0.3s ease;
-    }
-
-    button:hover {
-      background-color: #000;
+      border-radius: 8px 8px 0 0;
     }
 
     #filterForms {
@@ -139,27 +142,28 @@
 
     .hoverable:hover {
       transform: scale(1.2);
-      /* Adjust the scale factor as needed */
+    }
+
+    nav {
+      margin-top: 20px;
     }
   </style>
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@2.10.2/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-  <header class="bg-dark text-white text-center" style="height: auto">
+  <header class="bg-dark text-white text-center">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-3">
-          <!-- Logo on the left side with hover animation -->
           <a href="index.html" class="navbar-brand">
             <img src="LogoUnternehmen.png" alt="hachim logo" height="75%" width="75%"
               class="img-fluid logo-img hoverable" style="transition: transform 0.3s ease-in-out;">
           </a>
         </div>
         <div class="col-md-6">
-          <!-- Navigation and Heading in the middle -->
           <nav class="navbar navbar-expand-sm navbar-dark">
             <button class="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#navbarNav"
               aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -167,7 +171,6 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav mx-auto">
-                <!-- mx-auto centers the navigation links -->
                 <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="product.html">Products</a></li>
@@ -182,60 +185,76 @@
   </header>
 
   <main class="container">
-    <section class="mb-4">
-      <h2>Specifications for Xiaomi 14</h2>
-      <div>
-        <select id="colorDropdown">
-          <option value="" selected hidden>Select Color</option>
-          <option value="Black">Black</option>
-          <option value="White">White</option>
-          <option value="Green">Green</option>
-          <option value="Pink">Pink</option>
-        </select>
+    <section class="mb-4 row justify-content-center">
+      <div class="col-lg-8">
+        <h2 class="mb-4">Specifications for Xiaomi 14</h2>
+        <div class="mb-4">
+          <select id="colorDropdown" class="form-control mb-4">
+            <option value="" selected hidden>Select Color</option>
+            <option value="Black">Black</option>
+            <option value="White">White</option>
+            <option value="Green">Green</option>
+            <option value="Pink">Pink</option>
+          </select>
+        </div>
+        <div class="mb-4">
+          <div class="row">
+            <div class="col">
+              <img id="phoneImageBlack" src="Xiaomi14_Black.webp" alt="Xiaomi 14 - Black" class="img-fluid">
+            </div>
+            <div class="col">
+              <img id="phoneImageWhite" src="Xiaomi14_White.webp" alt="Xiaomi 14 - White" class="img-fluid">
+            </div>
+            <div class="col">
+              <img id="phoneImageGreen" src="Xiaomi14_Green.webp" alt="Xiaomi 14 - Green" class="img-fluid">
+            </div>
+            <div class="col">
+              <img id="phoneImagePink" src="Xiaomi14_Pink.webp" alt="Xiaomi 14 - Pink" class="img-fluid">
+            </div>
+          </div>
+        </div>
+        <div class="mb-4 text-justify p-3 text-left">
+          <p>
+            MANUFACTURER: Xiaomi
+            <br>
+            MODEL: Xiaomi 14
+            <br>
+            COLOR: Black, White
+            <br>
+            OPERATING SYSTEM: Xiaomi Hyper OS base on Android.
+            <br>
+            NETWORK: GSM, CDMA1X, WCDMA, TD-SCDMA, CDMA EVDO, TD-LTE, LTE-FDD
+            <br>
+            BAND: 5G: n1/ n3/ n5/ n8/ n28a/ n38/ n40/ n41/ n48/ n66/ n77/ n78
+            <br>
+            CARRIER: Unlocked
+            <br>
+            LANGUAGE: English and Chinese
+            <br>
+            SCREEN: 6.36-inch 1.5K AMOLED Display
+            <br>
+            PROCESSOR: CPU: 4nm Qualcomm Snapdragon 8 Gen 3 processor, GPU: Adreno 750
+            <br>
+            RAM: 12GB/16GB LPDDR5X RAM
+            <br>
+            ROM: 256GB/512GB/1TB, UFS 4.0 Storage
+            <br>
+            REAR CAMERA: 50MP+50MP+50MP
+            <br>
+            FRONT CAMERA: 32MP, 26mm (wide), 0.7µm
+            <br>
+            BATTERY: 4610mAh battery, super-fast 120W wired charging and 50W wireless charging
+            <br>
+            SIM CARD: Dual Nano SIM slots
+            <br>
+            DIMENSION: 152.8 x 71.5 x 8.2 mm or 8.28 mm
+            <br>
+            WEIGHT: 193 g or 188 g
+            <br>
+            IN THE BOX: Phone, USB Type-C Cable, Charger, Manual, SIM Needle
+          </p>
+        </div>
       </div>
-      <img id="phoneImageBlack" src="Xiaomi14_Black.webp" alt="Xiaomi 14 - Black" style="display: none;">
-      <img id="phoneImageWhite" src="Xiaomi14_White.webp" alt="Xiaomi 14 - White" style="display: none;">
-      <img id="phoneImageGreen" src="Xiaomi14_Green.webp" alt="Xiaomi 14 - Green" style="display: none;">
-      <img id="phoneImagePink" src="Xiaomi14_Pink.webp" alt="Xiaomi 14 - Pink" style="display: none;">
-      <p>
-        MANUFACTURER: Xiaomi
-        <br>
-        MODEL: Xiaomi 14
-        <br>
-        COLOR: Black, White
-        <br>
-        OPERATING SYSTEM: Xiaomi Hyper OS base on Android.
-        <br>
-        NETWORK: GSM, CDMA1X, WCDMA, TD-SCDMA, CDMA EVDO, TD-LTE, LTE-FDD
-        <br>
-        BAND: 5G: n1/n3/n5/n8/n28a/n38/n40/n41/n48/n66/n77/n78.
-        <br>
-        CARRIER: Unlocked
-        <br>
-        LANGUAGE: English and Chinese
-        <br>
-        SCREEN: 6.36-inch 1.5K AMOLED Display
-        <br>
-        PROCESSOR: CPU: 4nm Qualcomm Snapdragon 8 Gen 3 processor, GPU: Adreno 750
-        <br>
-        RAM: 12GB/16GB LPDDR5X RAM
-        <br>
-        ROM: 256GB/512GB/1TB, UFS 4.0 Storage
-        <br>
-        REAR CAMERA: 50MP+50MP+50MP
-        <br>
-        FRONT CAMERA: 32MP, 26mm (wide), 0.7µm
-        <br>
-        BATTERY: 4610mAh battery, super-fast 120W wired charging and 50W wireless charging
-        <br>
-        SIM CARD: Dual Nano SIM slots
-        <br>
-        DIMENSION: 152.8 x 71.5 x 8.2 mm or 8.28 mm
-        <br>
-        WEIGHT: 193 g or 188 g
-        <br>
-        IN THE BOX: Phone, USB Type-C Cable, Charger, Manual, SIM Needle
-      </p>
     </section>
   </main>
 
@@ -252,18 +271,22 @@
       Pink: document.getElementById('phoneImagePink')
     };
 
+    // Hide all image columns initially
+    Object.values(phoneImages).forEach(image => {
+      image.closest('.col').style.display = 'none';
+    });
+
     colorDropdown.addEventListener('change', function () {
       const selectedColor = colorDropdown.value;
-      if (selectedColor === '') {
-        // Hide all images if the default option is selected
-        Object.keys(phoneImages).forEach(color => {
-          phoneImages[color].style.display = 'none';
-        });
-      } else {
-        // Show only the selected image
-        Object.keys(phoneImages).forEach(color => {
-          phoneImages[color].style.display = color === selectedColor ? 'block' : 'none';
-        });
+
+      // Hide all image columns
+      Object.values(phoneImages).forEach(image => {
+        image.closest('.col').style.display = 'none';
+      });
+
+      if (selectedColor !== '') {
+        // Show only the column of the selected color image
+        phoneImages[selectedColor].closest('.col').style.display = 'block';
       }
     });
   </script>
